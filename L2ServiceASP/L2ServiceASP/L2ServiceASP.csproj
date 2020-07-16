@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\L2DB.mdf" />
+    <Content Include="App_Data\L2DB_log.ldf">
+      <DependentUpon>L2DB.mdf</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
