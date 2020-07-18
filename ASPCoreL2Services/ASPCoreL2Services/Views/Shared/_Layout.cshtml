@@ -1,11 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Lineage 2 Services</title>
-    <link rel="stylesheet" href="CSS/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    @await Html.PartialAsync("cssPartial")
+    @await Html.PartialAsync("metatagsPartial")
 </head>
 <body>
     <div id="wrapper">
@@ -76,5 +73,6 @@
         </div>
         <div id="footer"><h2>© 2019 CodeineSolm.</h2></div>
     </div>
+    @await Html.PartialAsync("scriptsPartial")
 </body>
 </html>
