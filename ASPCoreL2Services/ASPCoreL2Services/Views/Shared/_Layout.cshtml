@@ -7,7 +7,7 @@
 <body>
     <div id="wrapper">
         @*Header*@
-        <div id="header"><img src="images/l2Header.png" alt="header" /></div>
+        @await Html.PartialAsync("headerPartial")
 
         @*Main*@
         <div id="content">
@@ -76,7 +76,7 @@
         </div>
 
         @*Footer*@
-        <div id="footer"><h2>© 2019 CodeineSolm.</h2></div>
+        @await Html.PartialAsync("footerPartial")
     </div>
     @await Html.PartialAsync("scriptsPartial")
 </body>
