@@ -10,7 +10,7 @@
         @await Html.PartialAsync("headerPartial")
 
         @*Main*@
-        <div id="content">
+        <div id="content">                 
             <div id="nav">
                 <ul>
                     <li><a title="Go to main page" href="index.html"><img src="images/l2logof.jpg" alt="Main page Logo" /></a></li>
@@ -22,7 +22,7 @@
             <div id="main">
                 <table>
                     <tr>
-                        <th id="main_title" colspan="3"><h1>Lineage 2 Services main page</h1></th>
+                        <th id="main_title" colspan="3"><h1>@RenderBody()</h1></th>
                     </tr>
                     <tr>
                         <td class="small_card">
