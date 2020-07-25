@@ -1,11 +1,12 @@
-﻿<meta charset="utf-8">
+﻿@using ASPCoreL2Services.Service
+<meta charset="utf-8">
 @if (ViewBag.Title != null)
 {
     <title>@ViewBag.Title</title>
 }
 else
 {
-    <title>Lineage 2 Services</title>
+    <title>@Config.SiteName</title>
 }
 @if (ViewBag.Description != null)
 {
