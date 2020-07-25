@@ -9,8 +9,6 @@ namespace ASPCoreL2Services.Domain.Entities
 {
     public class EntityBase
     {
-        protected EntityBase() => DateAdded = DateTime.UtcNow;
-
         [Required]
         public int Id { get; set; }
 
