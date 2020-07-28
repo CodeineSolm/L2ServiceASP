@@ -10,6 +10,7 @@ namespace ASPCoreL2Services.Domain
 {
     public class L2Context : DbContext
     {
+        public L2Context(DbContextOptions<L2Context> options) : base(options) { }
         public DbSet<EntityBase> DBEntityBase { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

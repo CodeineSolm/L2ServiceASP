@@ -28,7 +28,7 @@ namespace ASPCoreL2Services.Domain.Entities
         public string Subpreview { get; set; }
 
         [Display(Name = "Цена услуги")]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
 
         [Display(Name = "SEO метатег Title")]
         public string MetaTitle { get; set; }
