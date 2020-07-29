@@ -1,35 +1,21 @@
-﻿<table>
+﻿@model IEnumerable<EntityBase>
+<table>
     <tr>
         <th id="main_title" colspan="3"><h1>Lineage 2 Services main page</h1></th>
     </tr>
     <tr>
-        <td class="small_card">
-            <img src="images/adena.jpg" alt="Adena" />
-            <div class="content1">
-                <small>Adena</small>
-                <h2>Equip your character fast to compete</h2>
-                <p>Buy adena instantly, we have unlimited amount of gold.</p>
-                <a title="Go to Adena page" href="Adena.html">Adena page</a>
-            </div>
-        </td>
-        <td class="small_card">
-            <img src="images/exp.jpg" alt="Exp" />
-            <div class="content1">
-                <small>Experience</small>
-                <h2>You need high level for endgame.</h2>
-                <p>Fastest exp u ever seen.</p>
-                <a title="Go to Exp page" href="Exp.html">Exp page</a>
-            </div>
-        </td>
-        <td class="small_card">
-            <img src="images/quests.jpg" alt="Quests" />
-            <div class="content1">
-                <small>Quests</small>
-                <h2>If u dont have time to do quests</h2>
-                <p>40k, 80k, 100k mobs is boring.</p>
-                <a title="Go to Quests page" href="Quests.html">Quests page</a>
-            </div>
-        </td>
+        @foreach (EntityBase item in Model)
+        {
+            <td class="small_card">
+                <img src="@item.Preview" alt="@item.Title" />
+                <div class="content1">
+                    <small>@item.Title</small>
+                    <h2>@item.Subtitle</h2>
+                    <p>@item.Description</p>
+                    <a title="Go to @item.Title page" href="@Url.Action("ServicePage", "Home", new { item_id = item.Id })">@item.Title page</a>
+                </div>
+            </td>
+        }
     </tr>
     <tr>
         <td class="big_card" colspan="3">

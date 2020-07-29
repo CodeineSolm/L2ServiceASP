@@ -22,8 +22,9 @@ namespace ASPCoreL2Services
         
         public void ConfigureServices(IServiceCollection services)
         {
-            //var connStr = Configuration.GetConnectionString(Config.ConnectingString);
+            
             var connStr = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=L2Services;Integrated Security=True";
+            //var connStr = Configuration.GetConnectionString(Config.ConnectionString);
             services.AddControllersWithViews().SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
             Configuration.Bind("Project", new Config());
             services.AddDbContext<L2Context>(x => x.UseSqlServer(connStr));

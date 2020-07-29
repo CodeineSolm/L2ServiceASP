@@ -11,6 +11,11 @@ namespace ASPCoreL2Services.Domain
     public class L2Context : DbContext
     {
         public L2Context(DbContextOptions<L2Context> options) : base(options) { }
+        public L2Context() { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+            => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=L2Services;Integrated Security=True");
+
         public DbSet<EntityBase> DBEntityBase { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

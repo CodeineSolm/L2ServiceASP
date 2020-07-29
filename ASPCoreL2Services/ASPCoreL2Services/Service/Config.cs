@@ -8,7 +8,7 @@ namespace ASPCoreL2Services.Service
 {
     public class Config
     {
-        public static string ConnectingString { get; set; }
+        public static string ConnectionString { get; set; }
         public static string SiteName { get; set; }
     }
 }
