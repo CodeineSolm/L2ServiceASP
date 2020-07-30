@@ -7,8 +7,8 @@
             <td colspan="3"><img id="previewpic" src="@Model.Subpreview.Split(',')[0]" alt="Preview" /></td>
         </tr>
         <tr class="small_pic">
-            <td><img src="@Model.Subpreview.Split(',')[0]" alt="Adena farm" /></td>
-            <td><img src="@Model.Subpreview.Split(',')[1]" alt="Siege winner" /></td>
-            <td><img src="@Model.Subpreview.Split(',')[2]" alt="Enchanted weapon" /></td>
+            <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[0]" alt="Adena farm" /></td>
+            <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[1]" alt="Siege winner" /></td>
+            <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[2]" alt="Enchanted weapon" /></td>
         </tr>
 </table>
