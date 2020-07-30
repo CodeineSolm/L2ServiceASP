@@ -20,5 +20,15 @@ namespace ASPCoreL2Services.Controllers
             var Item = db.DBEntityBase.FirstOrDefault(x => x.Id == item_id);
             return View(Item);
         }
+        public IActionResult Navigation()
+        {
+            var Items = db.DBEntityBase;
+            string result = "";
+            foreach (var item in Items)
+            {
+                result += "<li><a title='Go to "+item.Title+" page' href='/Home/ServicePage/?item_id="+item.Id+"'>"+item.Title+"</a></li>";
+            }
+            return Content(result);
+        }
     }
 }
