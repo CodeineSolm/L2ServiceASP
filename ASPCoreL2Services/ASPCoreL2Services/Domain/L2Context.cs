@@ -32,7 +32,7 @@ namespace ASPCoreL2Services.Domain
                 new EntityBase { Id = 2, Title = "Experience", Subtitle = "You need high level for endgame.",
                     Description = "Fastest exp u ever seen.", 
                     Preview = "images/exp.jpg", 
-                    Subpreview = "images/endgame1.jpg, images/endgame2.jpg, images/endgame3.jpg", 
+                    Subpreview = "/images/endgame1.jpg, /images/endgame2.jpg, /images/endgame3.jpg", 
                     Price = 6, DateAdded = DateTime.UtcNow },
 
                 new EntityBase { Id = 3, Title = "Quests", Subtitle = "If u dont have time to do quests", 
