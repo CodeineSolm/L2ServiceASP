@@ -10,13 +10,11 @@
         @await Html.PartialAsync("headerPartial")
 
         @*Main*@
-        <div id="content">                 
+        <div id="content">
             <div id="nav">
                 <ul>
-                    <li><a title="Go to main page" href="/Home/Index"><img src="images/l2logof.jpg" alt="Main page Logo" /></a></li>
-                    <li><a title="Go to Adena page" href="Adena.html">Adena</a></li>
-                    <li><a title="Go to Exp page" href="Exp.html">Exp</a></li>
-                    <li><a title="Go to Quests page" href="Quests.html">Quests</a></li>
+                    <li><a title="Go to main page" href="/Home/Index"><img src="images/l2logof.jpg" alt="Main page Logo" /></a></li>                      
+                    @RenderSection("Nav")
                 </ul>
             </div>
             <div id="main">

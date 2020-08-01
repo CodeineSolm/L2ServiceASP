@@ -15,20 +15,22 @@ namespace ASPCoreL2Services.Controllers
             var Items = db.DBEntityBase;
             return View(Items);
         }
+        public ContentResult Error1()
+        {
+            return new ContentResult
+            {
+                ContentType = "text/html",                
+                Content = "<h1>Page is not found!</h1>"
+            };
+        }
         public IActionResult ServicePage(int item_id)
         {
             var Item = db.DBEntityBase.FirstOrDefault(x => x.Id == item_id);
-            return View(Item);
-        }
-        public IActionResult Navigation()
-        {
-            var Items = db.DBEntityBase;
-            string result = "";
-            foreach (var item in Items)
+            if (Item == null)
             {
-                result += "<li><a title='Go to "+item.Title+" page' href='/Home/ServicePage/?item_id="+item.Id+"'>"+item.Title+"</a></li>";
+                return Error1();
             }
-            return Content(result);
-        }
+            return View(Item);
+        }  
     }
 }

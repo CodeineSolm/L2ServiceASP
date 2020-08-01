@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using ASPCoreL2Services.Service;
 using ASPCoreL2Services.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace ASPCoreL2Services
 {
@@ -28,6 +29,7 @@ namespace ASPCoreL2Services
             services.AddControllersWithViews().SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
             Configuration.Bind("Project", new Config());
             services.AddDbContext<L2Context>(x => x.UseSqlServer(connStr));
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

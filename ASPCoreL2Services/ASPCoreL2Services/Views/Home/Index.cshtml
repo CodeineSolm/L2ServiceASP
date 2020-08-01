@@ -4,7 +4,7 @@
         <th id="main_title" colspan="3"><h1>Lineage 2 Services main page</h1></th>
     </tr>
     <tr>
-        @foreach (EntityBase item in Model)
+        @foreach (var item in Model)
         {
             <td class="small_card">
                 <img src="@item.Preview" alt="@item.Title" />
@@ -36,3 +36,10 @@
         </td>
     </tr>
 </table>
+
+@section Nav {
+    @foreach (var item in Model)
+    {
+        <li><a title="Go to @item.Title page" href="@Url.Action("ServicePage", "Home", new { item_id = item.Id })">@item.Title</a></li>
+    }
+}
