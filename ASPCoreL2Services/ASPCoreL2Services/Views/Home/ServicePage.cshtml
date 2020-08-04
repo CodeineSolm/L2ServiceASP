@@ -1,17 +1,35 @@
 ﻿@model EntityBase
-<table>
-    <tr>
-        <th id="main_title" colspan="3"><h1>@Model.Title</h1></th>
-    </tr>
-    <tr class="big_pic">
-        <td colspan="3"><img id="previewpic" src="@Model.Subpreview.Split(',')[0]" alt="Preview" /></td>
-    </tr>
-    <tr class="small_pic">
-        <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[0]" /></td>
-        <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[1]" /></td>
-        <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[2]" /></td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <th id="main_title" colspan="3"><h1>@Model.Title</h1></th>
+        </tr>
+        <tr class="big_pic">
+            <td colspan="3"><img id="previewpic" src="@Model.Subpreview.Split(',')[0]" alt="Preview" /></td>
+        </tr>
+        <tr class="small_pic">
+            <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[0]" /></td>
+            <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[1]" /></td>
+            <td><img onclick="SetImg(this.src)" src="@Model.Subpreview.Split(',')[2]" /></td>
+        </tr>
+        <tr>
+            <td class="big_card" colspan="3">
+                <img src="images/Form2.jpg" alt="form">
+                <form action="/Home/Form" method="POST">
+                    <fieldset>
+                        <legend>Make ur order</legend>
+                        <input type="text" name="Name" placeholder="Your nickname here" required /><br />
+                        <input type="text" name="Tel" placeholder="Your server here" required /><br />
+                        <select name="Services">
+                            <option value="Adena">Adena</option>
+                            <option value="Exp">Exp</option>
+                            <option value="Quests">Quests</option>
+                        </select><br />
+                        <input type="submit" />
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+    </table>
 
 @section Nav {
     <li><a title="Go to Adena page" href="@Url.Action("ServicePage", "Home", new { item_id = 1 })">Adena</a></li>

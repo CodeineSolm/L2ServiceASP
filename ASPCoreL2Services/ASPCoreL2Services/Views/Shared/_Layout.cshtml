@@ -13,13 +13,20 @@
         <div id="content">
             <div id="nav">
                 <ul>
-                    <li><a title="Go to main page" href="/Home/Index"><img src="images/l2logof.jpg" alt="Main page Logo" /></a></li>                      
-                    @RenderSection("Nav")
+                    <li><a title="Go to main page" href="/Home/Index"><img src="images/l2logof.jpg" alt="Main page Logo" /></a></li>
+                    @if (IsSectionDefined("Nav"))
+                    {
+                        @RenderSection("Nav")
+                    }
                 </ul>
             </div>
             <div id="main">
                 @RenderBody()
             </div>
+            @if (IsSectionDefined("Form"))
+            {
+                @RenderSection("Form")
+            }
         </div>
 
         @*Footer*@
