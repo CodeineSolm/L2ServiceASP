@@ -8785,7 +8785,7 @@ function SetImg(selected_url)
 function SubmitForm(name,tel,car)
 {
     $.ajax({
-        method:"POST", url:"/Home/Order",
+        method:"POST", url:"/Home/Form",
         data:{Name:name,Tel:tel,Services:services}
     }).fail(function(){
         alert("При передаче данных произошла ошибка!");

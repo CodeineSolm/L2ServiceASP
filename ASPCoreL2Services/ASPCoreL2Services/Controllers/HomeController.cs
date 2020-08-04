@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ASPCoreL2Services.Domain;
+using ASPCoreL2Services.Models;
 
 namespace ASPCoreL2Services.Controllers
 {
@@ -33,15 +34,22 @@ namespace ASPCoreL2Services.Controllers
             return View(Item);
         }  
         [HttpGet]
-        public ActionResult Form(int item_id = 0)
+        public IActionResult Form(int item_id = 0)
         {
             ViewBag.Item = item_id;
             return PartialView();
         }
         [HttpPost]
-        public ActionResult Form()
+        public IActionResult Form(string nickname, string server, string service)
         {
-            return PartialView();
+            Orders order = new Orders
+            {
+                Nickname = nickname,
+                Server = server,
+                Service = service,
+                Status = "Создана"
+            };
+            return Content("Ваша заявка была принята");
         }
     }
 }
