@@ -1,4 +1,5 @@
 ﻿using ASPCoreL2Services.Domain.Entities;
+using ASPCoreL2Services.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace ASPCoreL2Services.Domain
             => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=L2Services;Integrated Security=True");
 
         public DbSet<EntityBase> DBEntityBase { get; set; }
+        public DbSet<Orders> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

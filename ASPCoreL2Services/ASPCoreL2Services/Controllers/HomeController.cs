@@ -32,5 +32,16 @@ namespace ASPCoreL2Services.Controllers
             }
             return View(Item);
         }  
+        [HttpGet]
+        public ActionResult Form(int item_id = 0)
+        {
+            ViewBag.Item = item_id;
+            return PartialView();
+        }
+        [HttpPost]
+        public ActionResult Form()
+        {
+            return PartialView();
+        }
     }
 }
