@@ -49,6 +49,8 @@ namespace ASPCoreL2Services.Controllers
                 Service = service,
                 Status = "Создана"
             };
+            db.Add(order);
+            db.SaveChanges();
             return Content("Ваша заявка была принята");
         }
     }
